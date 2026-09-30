@@ -57,6 +57,7 @@ GitHub Pages: https://artem-popkov.github.io/kr1-html-css-shop/
 - Практическая работа 4: добавлены CSS-переменные, состояния интерфейса и упорядочена структура стилей.
 - Практическая работа 5: создана многостраничная структура сайта, добавлены единая навигация и якорные ссылки.
 - Практическая работа 6: добавлены Flexbox-навигация и Grid-раскладка карточек и каталога.
+- Практическая работа 7: выполнен рефакторинг CSS-стилей по методологии БЭМ.
 
 ## Использование Flexbox и Grid
 
@@ -86,3 +87,24 @@ GitHub Pages: https://artem-popkov.github.io/kr1-html-css-shop/
 - базовая HTML-валидация;
 - базовая JS-обработка формы;
 - сообщение об успешной отправке.
+
+## БЭМ-структура проекта
+
+В проекте используются следующие БЭМ-блоки:
+
+- `site-header` — шапка сайта (`site-header__inner`, `site-header__logo`);
+- `site-nav` — основная навигация (`site-nav__list`, `site-nav__item`, `site-nav__link`, модификатор `site-nav__link--active`);
+- `breadcrumbs` — хлебные крошки (`breadcrumbs__link`, `breadcrumbs__current`);
+- `hero` — первый экран главной страницы;
+- `section` — универсальный раздел страницы (`section__title`);
+- `products-grid` — сетка товаров;
+- `product-card` — карточка товара (`__title`, `__description`, `__price`, `__button`, модификаторы `--featured`, `--discount`);
+- `catalog-layout` — структура страницы каталога;
+- `catalog-filters` — фильтры каталога;
+- `order-dialog` — модальное окно заявки;
+- `order-form` — форма заявки (`__field`, `__label`, `__input`, `__select`, `__textarea`, `__actions`);
+- `button` — кнопка (модификаторы `button--primary`, `button--secondary`);
+- `success-message` — сообщение об успешной отправке;
+- `site-footer` — подвал сайта.
+
+Стилизация через `id` и inline-стили не используются. `id` оставлены только для якорных ссылок и JavaScript.
