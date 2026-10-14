@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="320" viewBox="0 0 480 320" role="img" aria-label="Изображение учебного товара">
+  <rect width="480" height="320" fill="#eef5ff"/>
+  <rect x="150" y="80" width="180" height="130" rx="12" fill="#0057b8"/>
+  <rect x="170" y="100" width="140" height="12" rx="6" fill="#ffffff" opacity="0.85"/>
+  <rect x="170" y="124" width="100" height="12" rx="6" fill="#ffffff" opacity="0.6"/>
+  <circle cx="240" cy="176" r="14" fill="#ffffff"/>
+  <text x="240" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#003f86">Учебный товар</text>
+</svg>
