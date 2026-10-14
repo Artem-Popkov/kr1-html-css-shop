@@ -128,6 +128,9 @@ a:focus-visible {
    =============================== */
 
 .site-header {
+  position: sticky; /* шапка прилипает к верху при прокрутке */
+  top: 0;
+  z-index: 10; /* поверх карточек и остального контента */
   padding: var(--space-lg);
   background-color: var(--color-surface);
 }
@@ -257,6 +260,14 @@ a:focus-visible {
 
 .product-card--discount {
   border-color: var(--color-danger);
+}
+
+.product-card__image {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: var(--radius-md);
 }
 
 .product-card__title {
@@ -504,6 +515,15 @@ a:focus-visible {
 
 .product-details__description {
   margin: 0 0 var(--space-md);
+}
+
+.product-details__features {
+  margin: 0 0 var(--space-md);
+  padding-left: var(--space-lg);
+}
+
+.product-details__feature {
+  margin-bottom: var(--space-xs);
 }
 
 .product-details__price {
