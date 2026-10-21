@@ -248,10 +248,19 @@ a:focus-visible {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background-color: var(--color-bg);
+  overflow: hidden;
+  /* КР2, доработка 4: плавная анимация при наведении */
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .product-card:hover {
   border-color: var(--color-primary);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.product-card:hover .product-card__image {
+  transform: scale(1.05);
 }
 
 .product-card--featured {
@@ -268,6 +277,7 @@ a:focus-visible {
   height: 200px;
   object-fit: contain;
   border-radius: var(--radius-md);
+  transition: transform 0.25s ease;
 }
 
 .product-card__title {
@@ -438,6 +448,7 @@ a:focus-visible {
 
 .product-card__badge {
   position: absolute;
+  z-index: 1;
   top: var(--space-sm);
   right: var(--space-sm);
   padding: var(--space-xs) var(--space-sm);
@@ -570,4 +581,110 @@ a:focus-visible {
 
 .order-form--page {
   max-width: 560px;
+}
+
+/* ===== КР2: доработки ===== */
+
+/* Доработка 1: каталог расширен до 6 товаров, рамка для новинки */
+
+.product-card--new {
+  border-color: var(--color-success);
+}
+
+/* Доработка 4 (дополнение): состояния кнопок — плавная смена цвета и «нажатие» */
+
+.button {
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+.button:active {
+  transform: scale(0.96);
+}
+
+/* Доработка 2: блок reviews — отзывы покупателей */
+
+.reviews__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+.review__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review__author {
+  margin: 0;
+  font-size: 18px;
+}
+
+.review__rating {
+  margin: 0;
+  color: #f5a623;
+  letter-spacing: 2px;
+}
+
+.review__text {
+  margin: 0;
+  padding-left: var(--space-md);
+  border-left: 3px solid var(--color-primary);
+  font-style: italic;
+}
+
+.review__text p {
+  margin: 0;
+}
+
+.review__date {
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+/* Доработка 3: блок faq — раскрывающиеся вопросы (details/summary) */
+
+.faq__item {
+  margin-bottom: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+}
+
+.faq__question {
+  padding: var(--space-md);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.faq__question:hover {
+  color: var(--color-primary);
+}
+
+.faq__item[open] {
+  border-color: var(--color-primary);
+  background-color: var(--color-surface-accent);
+}
+
+.faq__answer {
+  margin: 0;
+  padding: 0 var(--space-md) var(--space-md);
+}
+
+/* Адаптивность новых блоков для узких экранов */
+
+@media (max-width: 768px) {
+  .reviews__list {
+    grid-template-columns: 1fr;
+  }
 }
