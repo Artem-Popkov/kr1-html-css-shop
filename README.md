@@ -12,7 +12,7 @@
 - `contacts.html` – контактная информация;
 - `css/style.css` – файл стилей;
 - `js/main.js` – файл JavaScript (модальное окно, валидация формы);
-- `images/` – изображения (`product-placeholder.svg` – изображение товара);
+- `images/` – изображения: фото товаров (`headphones.jpg`, `keyboard.jpg`, `mouse.jpg`, `monitor.jpg`, `webcam.jpg`, `speaker.jpg`) и `product-placeholder.svg`;
 - `.gitignore` – список файлов, исключённых из Git;
 - `README.md` – описание проекта.
 
@@ -28,7 +28,7 @@
 ИРИП
 
 ## Текущий статус
-Контрольная работа №1 готова к сдаче (практические занятия №1–8).
+Контрольная работа №1 сдана. Выполнены самостоятельные доработки для контрольной работы №2.
 
 ## Ссылка на опубликованный проект
 GitHub Pages: https://artem-popkov.github.io/kr1-html-css-shop/
@@ -101,7 +101,9 @@ GitHub Pages: https://artem-popkov.github.io/kr1-html-css-shop/
 - `hero` — первый экран главной страницы;
 - `section` — универсальный раздел страницы (`section__title`);
 - `products-grid` — сетка товаров;
-- `product-card` — карточка товара (`__title`, `__description`, `__price`, `__button`, модификаторы `--featured`, `--discount`);
+- `product-card` — карточка товара (`__image`, `__badge`, `__title`, `__description`, `__price`, `__button`, модификаторы `--featured`, `--discount`, `--new`);
+- `reviews` / `review` — отзывы покупателей (`reviews__list`, `review__header`, `review__author`, `review__rating`, `review__text`, `review__date`);
+- `faq` — частые вопросы (`faq__item`, `faq__question`, `faq__answer`);
 - `catalog-layout` — структура страницы каталога;
 - `catalog-filters` — фильтры каталога;
 - `order-dialog` — модальное окно заявки;
@@ -118,9 +120,19 @@ GitHub Pages: https://artem-popkov.github.io/kr1-html-css-shop/
 - `position: sticky` – блок фильтров каталога остаётся на экране при прокрутке;
 - `position: fixed` и `z-index` – кнопка «Наверх» (`to-top`) в правом нижнем углу.
 
+## Самостоятельные доработки (КР №2)
+
+По списку примеров из практического занятия №8:
+
+1. **Расширенный каталог товаров** — в `catalog.html` 6 карточек вместо 3 (добавлены монитор, веб-камера и колонка с фотографиями), новый модификатор `product-card--new` с бейджем «Новинка».
+2. **Блок отзывов** — в `product.html` раздел `reviews` из трёх отзывов (`review__author`, `review__rating`, `review__text`, `review__date`); семантические теги `blockquote` и `time`, `aria-label` у рейтинга; на узких экранах через `@media` отзывы выстраиваются в одну колонку.
+3. **Блок часто задаваемых вопросов** — в `product.html` раздел `faq` на стандартных HTML-элементах `details`/`summary` (раскрытие без JavaScript); открытый вопрос подсвечивается через селектор `.faq__item[open]`.
+4. **Дополнительные состояния карточек и кнопок** — карточка при наведении плавно поднимается (`transform`, `box-shadow`, `transition`), изображение увеличивается (`scale`); кнопки плавно меняют цвет и сжимаются при нажатии (`:active`).
+
 ## Как посмотреть проект
 
 1. Открыть ссылку GitHub Pages (см. выше) или открыть `index.html` в браузере.
 2. Перейти по меню на каталог, страницу товара, страницу заявки и контакты.
 3. На главной нажать «Заказать» – откроется модальное окно с формой.
 4. Проверить кнопку «Наверх» и «прилипающие» фильтры на странице каталога.
+5. В каталоге навести курсор на карточки и кнопки; на странице товара — посмотреть отзывы и раскрыть частые вопросы.
